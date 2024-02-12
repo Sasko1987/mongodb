@@ -49,8 +49,8 @@ async function sortByAge() {
 }
 
 async function createUser(data) {
-  const newUser = await new User(data);
-  return newUser;
+  const newUser = new User(data);
+  return await newUser.save();
 }
 
 async function updateUser(id, data) {
@@ -58,7 +58,7 @@ async function updateUser(id, data) {
 }
 
 async function deleteOne(id) {
-  return await User.deteleOne({ _id: id });
+  return await User.deleteOne({ _id: id });
 }
 
 module.exports = {

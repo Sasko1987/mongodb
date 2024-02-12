@@ -66,7 +66,7 @@ async function updateUserInfo(req, res) {
 async function deleteUser(req, res) {
   try {
     await deleteOne(req.params.id);
-    res.status(201).send("user was created");
+    res.status(201).send("user was delete");
   } catch (err) {
     res.status(500).send("Internal Server Error!");
   }
